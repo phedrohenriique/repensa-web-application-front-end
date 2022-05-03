@@ -1,4 +1,4 @@
-import { ColorModeScript, ChakraProvider, Button } from '@chakra-ui/react';
+import { ColorModeScript, ChakraProvider, Button, Box } from '@chakra-ui/react';
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
@@ -7,7 +7,16 @@ import { theme } from './utilis/RePensaTheme.js'
 ReactDOM.render(
   <StrictMode>
     <ChakraProvider theme={theme}>
-      <Button variant={'rePensa'} colorScheme={'blue'}>Chakra is Workig</Button>
+      <Box 
+      display={'flex'} 
+      flexDirection={'column'} 
+      alignContent={'center'} 
+      justifyContent={'center'} 
+      width={'sm'} 
+      height={'sm'} 
+      bg={'gray'}>
+        <Button variant={'rePensaWhiteButton'} colorScheme={'blue'}>Chakra is Workig</Button>
+      </Box>
     </ChakraProvider>
   </StrictMode>,
   document.getElementById('root')
