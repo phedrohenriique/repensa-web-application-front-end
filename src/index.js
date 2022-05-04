@@ -9,12 +9,21 @@ import {
   Route
 } from 'react-router-dom';
 import React, { StrictMode } from 'react';
-import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import { overrides } from './utilis/themes/theme'
 import Navigator from './components/Navigator/Navigator';
 
-ReactDOM.render(
+// ------------------------------// ----------------------------- //
+// calling react root component in the html index file with id = 'root'
+// update for react version 18.00
+
+import ReactDOM from 'react-dom/client';
+const rootElement = document.getElementById("root");
+const root = ReactDOM.createRoot(rootElement);
+
+// ---------------------------- // ----------------------------- //
+
+root.render(
   <StrictMode>
     <ChakraProvider theme={overrides}>
       <Navigator />
@@ -33,8 +42,7 @@ ReactDOM.render(
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
-  </StrictMode>,
-  document.getElementById('root')
+  </StrictMode>
 );
 
 // If you want your app to work offline and load faster, you can change

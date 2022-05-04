@@ -20,7 +20,7 @@ export default function Navigator() {
         justifyContent={'space-around'}
         gap={5}
       >
-        <Box>
+        <Box paddingLeft={2}>
           <Link href='/home'><Image boxSize={'-moz-initial'} src={logo} alt={'logo'}/></Link>
         </Box>
         <Box
@@ -41,6 +41,7 @@ export default function Navigator() {
         alignItems={'center'}
         justifyContent={'center'}
         gap={5}
+        paddingRight={2}
         >
           <Button 
           variant={'rePensaGreenButton'} 
