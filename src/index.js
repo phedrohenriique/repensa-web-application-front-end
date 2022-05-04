@@ -1,22 +1,37 @@
-import { ColorModeScript, ChakraProvider, Button, Box } from '@chakra-ui/react';
+import {
+  ChakraProvider,
+  Button,
+  Box
+} from '@chakra-ui/react';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from 'react-router-dom';
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import { theme } from './utilis/RePensaTheme.js'
+import { overrides } from './utilis/themes/theme'
+import Navigator from './components/Navigator/Navigator';
 
 ReactDOM.render(
   <StrictMode>
-    <ChakraProvider theme={theme}>
-      <Box 
-      display={'flex'} 
-      flexDirection={'column'} 
-      alignContent={'center'} 
-      justifyContent={'center'} 
-      width={'sm'} 
-      height={'sm'} 
-      bg={'gray'}>
-        <Button variant={'rePensaWhiteButton'} colorScheme={'blue'}>Chakra is Workig</Button>
-      </Box>
+    <ChakraProvider theme={overrides}>
+      <Navigator />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/testcomponents' element={
+            <Box
+              display={'flex'}
+              flexDirection={'column'}
+              alignContent={'center'}
+              justifyContent={'center'}
+              width={'sm'}
+              height={'sm'}
+              bg={'gray'}>
+              <Button variant={'rePensaWhiteButton'} colorScheme={'blue'}>Chakra is Workig</Button></Box>} />
+        </Routes>
+      </BrowserRouter>
     </ChakraProvider>
   </StrictMode>,
   document.getElementById('root')
