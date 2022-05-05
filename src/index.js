@@ -18,6 +18,7 @@ import Navigator from './components/Navigator/Navigator';
 // update for react version 18.00
 
 import ReactDOM from 'react-dom/client';
+import MobileNavigator from './components/Navigator/MobileNavigator';
 const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 
@@ -38,7 +39,7 @@ root.render(
               width={'sm'}
               height={'sm'}
               bg={'gray'}>
-              <Button variant={'rePensaWhiteButton'} colorScheme={'blue'}>Chakra is Workig</Button></Box>} />
+              <MobileNavigator /></Box>} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
