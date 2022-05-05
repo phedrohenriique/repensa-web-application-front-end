@@ -3,10 +3,11 @@ import {
     Box,
     Link,
     Image,
-    Button
-  } from '@chakra-ui/react'
-  import logo from '../../assets/images/logoRepensa.svg'
-  import { style } from '../../utilis/styles/style'
+    Button,
+    MenuItem
+} from '@chakra-ui/react'
+import logo from '../../assets/images/logoRepensa.svg'
+import { style } from '../../utilis/styles/style'
 
 export default function DesktopNavigator() {
     return (
@@ -37,10 +38,10 @@ export default function DesktopNavigator() {
                     justifyContent={'center'}
                     gap={5}
                 >
-                    <Link style={style.text} _hover={''} isTruncated minWidth={'fit-content'}>Quem Somos</Link>
-                    <Link style={style.text} _hover={''} isTruncated minWidth={'fit-content'}>RePensar</Link>
-                    <Link style={style.text} _hover={''} isTruncated minWidth={'fit-content'}>ReAproveitar</Link>
-                    <Link style={style.text} _hover={''} isTruncated minWidth={'fit-content'}>Empresas Parceiras</Link>
+                    <Box style={style.flexTextRowCenter} h={10} _hover={style.hoverMainMenuDesktop}><Link padding={2} variant={'rePensaLink'} isTruncated minWidth={'fit-content'}>Quem Somos</Link></Box>
+                    <Box style={style.flexTextRowCenter} h={10} _hover={style.hoverMainMenuDesktop}><Link padding={2} variant={'rePensaLink'} isTruncated minWidth={'fit-content'}>RePensar</Link></Box>
+                    <Box style={style.flexTextRowCenter} h={10} _hover={style.hoverMainMenuDesktop}><Link padding={2} variant={'rePensaLink'} isTruncated minWidth={'fit-content'}>ReAproveitar</Link></Box>
+                    <Box style={style.flexTextRowCenter} h={10} _hover={style.hoverMainMenuDesktop}><Link padding={2} variant={'rePensaLink'} isTruncated minWidth={'fit-content'}>Empresas Parceiras</Link></Box>
                 </Box>
                 <Box
                     display={'flex'}

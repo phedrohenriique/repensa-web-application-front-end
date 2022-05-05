@@ -7,13 +7,15 @@ import { extendTheme } from "@chakra-ui/react";
 // component styles overrides example
 
 import { Button } from "./components/button";
+import { Link } from "./components/link";
 
 export const overrides = extendTheme({
     //styles,
     // borders,
     // Other foundational style overrides go here
     components: {
-        Button
+        Button,
+        Link
         // Other components go here
     },
 })
