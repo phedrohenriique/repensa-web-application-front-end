@@ -9,7 +9,8 @@ import {
     Image,
     MenuList,
     MenuItem,
-    Text
+    Text,
+    useOutsideClick
 } from '@chakra-ui/react'
 import logo from '../../assets/images/logoRepensa.svg'
 import { style } from '../../utilis/styles/style'
@@ -19,6 +20,7 @@ import { MenuIcon } from '@heroicons/react/outline'
 // Mobile just have the click event option _hover prop isnt good to be used
 
 export default function MobileNavigator() {
+
     return (
         <>
             <Box
@@ -32,11 +34,11 @@ export default function MobileNavigator() {
                 gap={5}
             >
                 <Box paddingLeft={2}>
-                    <Menu>
+                <Menu>
                         <MenuButton as={Button} border={''} variant={'rePensaBlueButton'} >
                             <Icon as={MenuIcon} />
                         </MenuButton >
-                        <MenuList bg={'#003B70'} padding={2}>
+                         <MenuList bg={'#003B70'} padding={2}>
                             <MenuItem _active={''} _focus={style.hoverMainMenuMobile}><Link variant={'rePensaLink'} href={'/home'}>Quem Somos</Link></MenuItem>
                             <MenuItem _active={''} _focus={style.hoverMainMenuMobile}><Link variant={'rePensaLink'} href={''}>RePensar</Link></MenuItem>
                             <MenuItem _active={''} _focus={style.hoverMainMenuMobile}><Link variant={'rePensaLink'} href={''}>ReAproveitar</Link></MenuItem>
@@ -63,7 +65,7 @@ export default function MobileNavigator() {
                                 >Sou Instituição</Button>
                             </Box>
                             <Text color={'white'}>Não tem uma Conta? <Link variant={'rePensaLinkMobileMenu'}>Cadastre-se</Link></Text>
-                        </MenuList>
+                        </MenuList> 
                     </Menu>
                 </Box>
                 <Link href='/home'>
