@@ -9,8 +9,7 @@ import {
     Image,
     MenuList,
     MenuItem,
-    Text,
-    useOutsideClick
+    Text
 } from '@chakra-ui/react'
 import logo from '../../assets/images/logoRepensa.svg'
 import { style } from '../../utilis/styles/style'
