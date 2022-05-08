@@ -1,22 +1,55 @@
-import { ColorModeScript, ChakraProvider, theme, Button } from '@chakra-ui/react';
+import {
+  ChakraProvider,
+  Button,
+  Box
+} from '@chakra-ui/react';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from 'react-router-dom';
 import React, { StrictMode } from 'react';
-import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import * as serviceWorker from './serviceWorker';
+import { overrides } from './utilis/themes/theme'
+import Navigator from './components/Navigator/Navigator';
 
-ReactDOM.render(
+// ------------------------------// ----------------------------- //
+// calling react root component in the html index file with id = 'root'
+// update for react version 18.00
+
+import ReactDOM from 'react-dom/client';
+import MobileNavigator from './components/Navigator/MobileNavigator';
+const rootElement = document.getElementById("root");
+const root = ReactDOM.createRoot(rootElement);
+
+// ---------------------------- // ----------------------------- //
+
+root.render(
   <StrictMode>
-    <ChakraProvider theme={theme}>
-      <Button colorScheme={'blue'}>Chakra is Workig</Button>
+    <ChakraProvider theme={overrides}>
+      <Navigator />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/testcomponents' element={
+            <Box
+              display={'flex'}
+              flexDirection={'column'}
+              alignContent={'center'}
+              justifyContent={'center'}
+              width={'sm'}
+              height={'sm'}
+              bg={'gray'}>
+              <MobileNavigator /></Box>} />
+        </Routes>
+      </BrowserRouter>
     </ChakraProvider>
-  </StrictMode>,
-  document.getElementById('root')
+  </StrictMode>
 );
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://cra.link/PWA
-serviceWorker.unregister();
+//serviceWorker.unregister();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
